@@ -1,0 +1,81 @@
+<html>
+<head>
+<title> personal details </title>
+<script language="JavaScript">
+function validate(form)
+{
+if(form.First.value=="")
+  {
+    alert("First Name cannot be blanked");
+	return;
+   }
+ if(form.Last.value=="")
+  {
+    alert("Last Name cannot be blanked");
+	return;
+  } 
+  if(form.Age.value=="")
+  {
+    alert("Age cannot be blanked");
+	return;
+   }
+   if(form.gender.value=="")
+  {
+    alert("Gender cannot be blanked");
+	return;
+   }
+   return(window.location.href='thirdpage.html');
+ }
+ </script>
+</head>
+<body background="bg2.jpg" >
+<center>
+<form name="form1">
+
+<h1><font face="Lucida Handwriting" size=+6 color= "brown"><u> Personal Details </u></font> </h1>
+<table cellspacing="20">
+<tr>
+<td>
+<font face="Perpetua Titling MT" size=+1> <b> First Name </b>
+</td>
+<td>
+<input type="text" name="First">
+</td>
+</tr>
+<tr>
+<td>
+<font face="Perpetua Titling MT" size=+1> <b>Last Name</b>
+</td>
+<td>
+<input type="text" name="Last">
+</td>
+</tr>
+<tr>
+<td>
+<font face="Perpetua Titling MT" size=+1> <b> Age </b>
+</td>
+<td>
+<input type="text" name="Age">
+</td>
+</tr>
+<tr>
+<td>
+<tr>
+<td>
+<font face="Perpetua Titling MT" size=+1><b> Gender </b>
+</td>
+<td>
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female
+<input type="radio" name="gender">Other
+</td>
+</tr>
+</table>
+<br>
+<input type="button" name= "submit" value ="log in" onClick="validate(this.form)">
+
+</form>
+</center>
+
+</body>
+</html>

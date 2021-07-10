@@ -1,0 +1,88 @@
+<html>
+<head>
+<script language="javaScript" >
+var an=["D","A","D","C","D","D","C","C","C","B"]
+ total=an.length;
+ 
+function CheckedValue( radioName ){
+    var radio = document.getElementsByName( radioName ); // Get radio group by-name
+    for(var y=0; y<radio.length; y++)
+      if(radio[y].checked) return radio[y].value; // return the checked value
+}
+
+function Score(){
+  var marks = 0;
+  for (var i=0; i<total; i++)
+    if(CheckedValue("ans"+i)===an[i]) marks += 1; // increment only
+  return marks;
+}
+
+function returnMarks(form){
+var marks=Score();
+  form.t2.value=marks;
+  alert("Your score is "+ marks +"/"+ total);
+}
+</script>
+</head>
+<body background="bg4.jpg">
+<form>
+<ul>
+  <h4><font face= "Comic Sans MS" size=+1 >1.) Periodic table was given by ?</font> </h4>
+  <input type="radio" name="ans0" value="A">Faraday <br>
+  <input type="radio" name="ans0" value="B">Lavoisier<br>
+  <input type="radio" name="ans0" value="C">Arrhenius<br>
+  <input type="radio" name="ans0"  value="D">Mendleev<br>
+  <h4><font face= "Comic Sans MS" size=+1 >2.)  Which one of the following is the softest?</font> </h4>
+  <input type="radio" name="ans1" value="A">sodium<br>
+  <input type="radio" name="ans1" value="B">iron<br>
+  <input type="radio" name="ans1" value="C">aluminium<br>
+  <input type="radio" name="ans1"  value="D">lithium<br>
+  <h4><font face= "Comic Sans MS" size=+1 >3.)  Bauxite is an ore of?? </font> </h4>
+  <input type="radio" name="ans2" value="A">copper<br>
+  <input type="radio" name="ans2" value="B"> zinc<br>
+  <input type="radio" name="ans2" value="C">aluminium<br>
+  <input type="radio" name="ans2"  value="D">iron<br>
+  <h4><font face= "Comic Sans MS" size=+1 >4.)  The element used in lead pencils is?  </font> </h4>
+  <input type="radio" name="ans3" value="A">zinc <br>
+  <input type="radio" name="ans3" value="B">lead<br>
+  <input type="radio" name="ans3" value="C">carbon<br>
+  <input type="radio" name="ans3"  value="D">tin<br>
+  <h4><font face= "Comic Sans MS" size=+1 >5.)Normal valency of nitrogen is ? </font> </h4>
+  <input type="radio" name="ans4" value="A"> 2 <br>
+  <input type="radio" name="ans4" value="B"> 3<br>
+  <input type="radio" name="ans4" value="C">4<br>
+  <input type="radio" name="ans4"  value="D">5<br>
+  <h4><font face= "Comic Sans MS" size=+1 >6.) Natural rubber is a polymer derived from ? </font> </h4>
+  <input type="radio" name="ans5" value="A"> ethylene <br>
+  <input type="radio" name="ans5" value="B"> propylene<br>
+  <input type="radio" name="ans5" value="C">butadiene<br>
+  <input type="radio" name="ans5"  value="D">isoprene<br>
+  <h4><font face= "Comic Sans MS" size=+1 >7.) Bleaching powder contains ?</font> </h4>
+  <input type="radio" name="ans6" value="A"> Nitrogen <br>
+  <input type="radio" name="ans6" value="B"> Iodine<br>
+  <input type="radio" name="ans6" value="C">Chlorine<br>
+  <input type="radio" name="ans6"  value="D">Bromine<br>
+  <h4><font face= "Comic Sans MS" size=+1 >8.) pH of blood is?</font> </h4>
+  <input type="radio" name="ans7" value="A"> 6.4 <br>
+  <input type="radio" name="ans7" value="B"> 4<br>
+  <input type="radio" name="ans7" value="C">7.4<br>
+  <input type="radio" name="ans7"  value="D">8<br>
+  <h4><font face= "Comic Sans MS" size=+1 >9.) pH of water is</font> </h4>
+  <input type="radio" name="ans8" value="A"> 4 <br>
+  <input type="radio" name="ans8" value="B"> 12<br>
+  <input type="radio" name="ans8" value="C">7<br>
+  <input type="radio" name="ans8"  value="D">18<br>
+  <h4><font face= "Comic Sans MS" size=+1 >10.) "Atoms can neither be created nor destroyed." This principle was given by __?</font> </h4>
+  <input type="radio" name="ans9" value="A"> Avogadro<br>
+  <input type="radio" name="ans9" value="B"> Dalton<br>
+  <input type="radio" name="ans9" value="C"> Rutherford<br>
+  <input type="radio" name="ans9"  value="D"> Niels Bohr<br>
+</ul>
+<center>
+<button onclick="returnMarks(this.form)">View Results</button>
+Your Score In Chemistry: <input type="text" name="t2">
+<input type="button"name= "submit" value ="End Exam" onClick="window.location.href='endpage.html'">
+</center>
+</form>
+</body>
+</html>

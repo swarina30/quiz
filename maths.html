@@ -1,0 +1,89 @@
+<html>
+<head>
+<script language="javaScript">
+var a=["B","B","A","C","B","A","B","C","B","D"]
+  t=a.length;
+function value(radioName)
+{
+    var rad = document.getElementsByName( radioName ); // Get radio group by-name
+    for(var y=0; y<rad.length; y++)
+      if(rad[y].checked) return rad[y].value; // return the checked value
+}
+
+function marks(){
+  var s = 0;
+  for (var i=0; i<t; i++)
+    if(value("ans"+i)===a[i]) s += 1; // increment only
+  return s;
+}
+
+function returnMarks(form){
+var m=marks();
+  form.t3.value=m;
+  alert("Your score is "+ m +"/"+ t);
+}
+</script>
+</head>
+<body background="bg4.jpg">
+<form>
+<ul>
+   <h4><font face= "Comic Sans MS" size=+1 >1.)  Simplify : 3 + 6 x (5 + 4) ? </font> </h4>
+   <input type="radio" name="ans0" value="A">11 <br>
+   <input type="radio" name="ans0" value="B">57<br>
+   <input type="radio" name="ans0" value="C">14<br>
+   <input type="radio" name="ans0"  value="D">15<br>
+  <h4><font face= "Comic Sans MS" size=+1 >2.) Find the median of the given data: 13, 16, 12, 14, 19, 12, 14, 13, 14.</font> </h4>
+  <input type="radio" name="ans1" value="A">19<br>
+  <input type="radio" name="ans1" value="B">14<br>
+  <input type="radio" name="ans1" value="C">12<br>
+  <input type="radio" name="ans1"  value="D">14.5<br>
+  <h4><font face= "Comic Sans MS" size=+1 >3.)  Two numbers are in ratio 4 : 5. If the sum of the numbers is 135, find the numbers. </font> </h4>
+  <input type="radio" name="ans2" value="A">60 And 75 <br>
+  <input type="radio" name="ans2" value="B"> 50 and 65<br>
+  <input type="radio" name="ans2" value="C">70 and 95<br>
+  <input type="radio" name="ans2"  value="D">65 and 75<br>
+  <h4><font face= "Comic Sans MS" size=+1 >4.) 20 % of 2 is equal to  </font> </h4>
+  <input type="radio" name="ans3" value="A"> 20 <br>
+  <input type="radio" name="ans3" value="B">4<br>
+  <input type="radio" name="ans3" value="C">0.4<br>
+  <input type="radio" name="ans3"  value="D">0.04<br>
+  <h4><font face= "Comic Sans MS" size=+1 >5.) (106 * 106) – (94 * 94) = ? </font> </h4>
+  <input type="radio" name="ans4" value="A"> 2004 <br>
+  <input type="radio" name="ans4" value="B"> 2400<br>
+  <input type="radio" name="ans4" value="C">1904<br>
+  <input type="radio" name="ans4"  value="D">1906<br>
+  <h4><font face= "Comic Sans MS" size=+1 >6.) Which of the following numbers gives 240 when added to its own square? </font> </h4>
+  <input type="radio" name="ans5" value="A"> 15 <br>
+  <input type="radio" name="ans5" value="B"> 16<br>
+  <input type="radio" name="ans5" value="C">18<br>
+  <input type="radio" name="ans5"  value="D">20<br>
+  <h4><font face= "Comic Sans MS" size=+1 >7.) The sum of the least number of three digits and largest number of two digits is ….. .</font> </h4>
+  <input type="radio" name="ans6" value="A"> 101 <br>
+  <input type="radio" name="ans6" value="B"> 199<br>
+  <input type="radio" name="ans6" value="C">111<br>
+  <input type="radio" name="ans6"  value="D">100<br>
+  <h4><font face= "Comic Sans MS" size=+1 >8.)  Area of a parallelogram whose base is 9 cm and height is 4 cm is ……….. square cm.</font> </h4>
+  <input type="radio" name="ans7" value="A"> 9 <br>
+  <input type="radio" name="ans7" value="B"> 4<br>
+  <input type="radio" name="ans7" value="C">36<br>
+  <input type="radio" name="ans7"  value="D">13<br>
+  <h4><font face= "Comic Sans MS" size=+1 >9.)Find the sum of 111 + 222 + 333?</font> </h4>
+  <input type="radio" name="ans8" value="A"> 700 <br>
+  <input type="radio" name="ans8" value="B"> 666<br>
+  <input type="radio" name="ans8" value="C">10<br>
+  <input type="radio" name="ans8"  value="D">100<br>
+  <h4><font face= "Comic Sans MS" size=+1 >10.) If 5 boys take 7 hours to pack 35 cartoons, then how many boys can pack 65 cartoons in 3 hours</font> </h4>
+  <input type="radio" name="ans9" value="A"> 26<br>
+  <input type="radio" name="ans9" value="B"> 39<br>
+  <input type="radio" name="ans9" value="C"> 45<br>
+  <input type="radio" name="ans9"  value="D"> none of these<br>
+</ul>
+<center>
+<input type="button" name= "submit" value ="Next Exam" onClick="window.location.href='chemistry.html'">1
+<input type="button" name= "submit" value ="view result" onClick="returnMarks(this.form)">
+<br>
+Your Score In Maths: <input type="text" name="t3">
+</center>
+</form>
+</body>
+</html>

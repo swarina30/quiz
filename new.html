@@ -1,0 +1,88 @@
+<html>
+<head>
+<script language="javaScript">
+var answers = ["A","B","D","A","C","A","A","B","D","B"]
+    tot = answers.length;
+
+function getCheckedValue( radioName ){
+    var radios = document.getElementsByName( radioName ); // Get radio group by-name
+    for(var y=0; y<radios.length; y++)
+      if(radios[y].checked) return radios[y].value; // return the checked value
+}
+
+function getScore(){
+  var score = 0;
+  for (var i=0; i<tot; i++)
+    if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
+  return score;
+}
+
+function returnScore(form){
+var score=getScore();
+  form.t1.value=score;
+  alert("Your score is "+ score +"/"+ tot);
+}
+</script>
+</head>
+<body background="bg4.jpg">
+<form>
+<ul>
+    <h3><font face= "Comic Sans MS" size=+1 >1.)When light bends as it enters a different medium the process is known as what? </font></h3>
+    <input type="radio" name="question0" value="A">Refraction<br>
+    <input type="radio" name="question0" value="B">Diffraction<br>
+    <input type="radio" name="question0" value="C">Reflection<br>
+    <input type="radio" name="question0" value="D">Interference<br>
+     <h4><font face= "Comic Sans MS" size=+1 >2.) A magnifying glass is what type of lens? </font></h4>
+    <input type="radio" name="question1" value="A">Concave<br>
+    <input type="radio" name="question1" value="B">Convex<br>
+    <input type="radio" name="question1" value="C">PlanoConvex<br>
+    <input type="radio" name="question1" value="D">double Convex<br>
+    <h4><font face= "Comic Sans MS" size=+1 >3.)  Electric resistance is typically measured in what units? </font></h4>
+    <input type="radio" name="question2" value="A">1/seimen<br>
+    <input type="radio" name="question2" value="B">V/A<br>
+    <input type="radio" name="question2" value="C">ohm<br>
+    <input type="radio" name="question2" value="D">All of above<br>
+    <h4><font face= "Comic Sans MS" size=+1 >4.)  Which one of the following would be most powerful electro magnet? </font> </h4>
+    <input type="radio" name="question3" value="A">Soft Iron<br>
+    <input type="radio" name="question3" value="B">Steel<br>
+    <input type="radio" name="question3" value="C">Copper<br>
+    <input type="radio" name="question3" value="D">Air<br>
+    <h4><font face= "Comic Sans MS" size=+1 >5.)  Atmospheric pressure is measured by? </font> </h4>
+	<input type="radio" name="question4" value="A">Tonometer<br>
+    <input type="radio" name="question4" value="B">Pyrometer<br>
+    <input type="radio" name="question4" value="C">Barometer<br>
+    <input type="radio" name="question4" value="D">Thermometer<br>
+	<h4><font face= "Comic Sans MS" size=+1 >6.)   Which of the following measurements is not a unit of distance?</font> </h4>
+	<input type="radio" name="question5" value="A">Ammeter<br>
+    <input type="radio" name="question5" value="B">Parsec<br>
+    <input type="radio" name="question5" value="C">Cubic<br>
+    <input type="radio" name="question5" value="D">Armstrong<br>
+	<h4><font face= "Comic Sans MS" size=+1 >7.)  Scalars are quantities that are described by _____________</font> </h4>
+	<input type="radio" name="question6" value="A">Magnitude<br>
+    <input type="radio" name="question6" value="B">Direction<br>
+    <input type="radio" name="question6" value="C">Both A and B<br>
+    <input type="radio" name="question6" value="D">Motion<br>
+	<h4><font face= "Comic Sans MS" size=+1 >8.) What is the rate of acceleration of gravity?</font> </h4>
+	<input type="radio" name="question7" value="A">10 m/s/s<br>
+    <input type="radio" name="question7" value="B">9.8 m/s/s<br>
+    <input type="radio" name="question7" value="C">6.8 m/s/s<br>
+    <input type="radio" name="question7" value="D">7.8 m/s/s<br>
+	<h4><font face= "Comic Sans MS" size=+1 >9.) The speed of light will be minimum while passing through</font> </h4>
+	<input type="radio" name="question8" value="A">water<br>
+    <input type="radio" name="question8" value="B">vaccum<br>
+    <input type="radio" name="question8" value="C">air<br>
+    <input type="radio" name="question8" value="D">glass<br>
+	<h4><font face= "Comic Sans MS" size=+1 >10.) Pure water freezes at what temperature?</font> </h4>
+	<input type="radio" name="question9" value="A">47 F<br>
+    <input type="radio" name="question9" value="B">32 F<br>
+    <input type="radio" name="question9" value="C">0 F<br>
+    <input type="radio" name="question9" value="D">19 F<br>
+</ul>
+
+<button onclick="returnScore(this.form)">View Results</button> <br>
+<center>
+Your Score IN Physics: <input type="text" name="t1">
+</center>
+</form>
+</body>
+</html>
